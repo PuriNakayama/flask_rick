@@ -1,0 +1,42 @@
+<!--filha do layout-->
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-3 col-6">
+
+            <img src="{{ character_id.image }}" alt="{{character_id.name }}"
+            class="img-fluid img-thumbnail" />
+
+            <p><strong> Name: </strong> {{ character_id.name }} </p>
+            <p> <strong>Status:</strong>  {{ character_id.status}} </p>
+            <p> <strong> Species:</strong> {{ character_id.species}} </p>
+            <p> <strong> Gender:</strong> {{ character_id.gender}} </p>
+            <p> <strong> Origin: </strong> </p>
+            <ul>
+             {% for origin_url in character_id.origin %}
+                   <li> <a href="{{ character_id.origin}}"> {{ origin_url }} </a></li>
+                  
+            {% endfor %}
+            </ul>
+
+            <p> <strong> Location: </strong> </p>
+            <ul>
+                {% for location_url in character_id.location %}
+                      <li> <a href="{{ character_id.location}}"> {{ location_url }} </a></li>
+                     
+               {% endfor %}
+            </ul>
+
+            <p> <strong> Episode: </strong> </p>
+            <ul>
+                {% for episode_url in character_id.episode %}
+                      <li> <a href="{{ character_id.episode}}"> {{ episode_url }} </a></li>
+                     
+               {% endfor %}
+            </ul>
+            
+        </div>
+    </div>
+{% endblock %}
