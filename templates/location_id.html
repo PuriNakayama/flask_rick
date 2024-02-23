@@ -13,7 +13,9 @@
                 <ul>
                  {% for character_url in location_id.residents %}
                       <li>
-                          <a href="{{ location_id.residents}}">{{ character_url }}  </a> 
+                        {% set v_id_lo = character_url.split('/')[-1] %}
+                          <a href="/character_id/{{v_id_lo}}" >{{ character_url }}  </a> 
+                
                       </li>
                 {% endfor %}
                 </ul>

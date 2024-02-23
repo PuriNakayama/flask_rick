@@ -13,30 +13,27 @@
             <p> <strong>Status:</strong>  {{ character_id.status}} </p>
             <p> <strong> Species:</strong> {{ character_id.species}} </p>
             <p> <strong> Gender:</strong> {{ character_id.gender}} </p>
-            <p> <strong> Origin: </strong> </p>
-            <ul>
-             {% for origin_url in character_id.origin %}
-                   <li> <a href="{{ character_id.origin}}"> {{ origin_url }} </a></li>
-                  
-            {% endfor %}
-            </ul>
-
-            <p> <strong> Location: </strong> </p>
-            <ul>
-                {% for location_url in character_id.location %}
-                      <li> <a href="{{ character_id.location}}"> {{ location_url }} </a></li>
-                     
-               {% endfor %}
-            </ul>
-
+            <p> <strong> Origin: </strong> 
+                {% set v_id_or = character_id.origin.url.split('/')[-1] %}
+                <a href="/location_id/{{v_id_or}}"> {{ character_id.origin.name }} </a>
+            </p>
+            
+            <p> <strong> Location: </strong> 
+                {% set v_id_lo = character_id.origin.url.split('/')[-1] %}
+                <a href="/location_id/{{v_id_lo}}"> {{ character_id.origin.name }} </a>
+            </p>
+           
             <p> <strong> Episode: </strong> </p>
             <ul>
                 {% for episode_url in character_id.episode %}
-                      <li> <a href="{{ character_id.episode}}"> {{ episode_url }} </a></li>
+                      {% set v_id_ep = episode_url.split('/')[-1] %}
+                      <li> <a href="/episode_id/{{v_id_ep}}"> {{ episode_url }} </a></li>
                      
                {% endfor %}
             </ul>
             
+            
+             
         </div>
     </div>
 {% endblock %}
