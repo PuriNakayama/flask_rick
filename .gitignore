@@ -1,0 +1,8 @@
+#Ignore this pycache
+__pycache__
+
+#Ignore all venv
+.venv
+
+#ignore ds_store
+.ds_store
