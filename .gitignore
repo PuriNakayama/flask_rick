@@ -1,0 +1,8 @@
+#ignore a pasta __pycache__
+__pycache__
+
+#ignore a pasta venv
+.venv
+
+#ignore a pasta vscode
+.vscode
